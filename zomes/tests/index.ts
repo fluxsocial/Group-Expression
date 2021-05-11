@@ -64,6 +64,7 @@ orchestrator.registerScenario("create and get public expression", async (s, t) =
   const get_exp = await alice_happ.cells[0].call("group-expression", "get_expression_by_address", create_exp.holochain_data.element.signed_header.header.hash)
   console.log("Got exp by address", get_exp);
   t.notEqual(get_exp.expression_data, undefined);
+  t.pass()
 })
 
 
