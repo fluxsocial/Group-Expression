@@ -18,4 +18,4 @@ hc_time_index = { git = "https://github.com/juntofoundation/HC-Time-Chunking", b
 thiserror = "1.0.20"
 
 hdk = { git = "https://github.com/holochain/holochain", rev = "a6ac04396" }
-holo_hash = { git = "https://github.com/holochain/holochain", rev = "a6ac04396" 
+holo_hash = { git = "https://github.com/holochain/holochain", rev = "a6ac04396" }

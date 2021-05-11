@@ -124,21 +124,6 @@ checksum = "d9435d864e017c3c6afeac1654189b06cdb491cf2ff73dbf0d73b0f292f42ff8"
 [[package]]
 name = "fixt"
 version = "0.0.2-alpha.1"
-dependencies = [
- "holochain_serialized_bytes",
- "lazy_static",
- "parking_lot",
- "paste",
- "rand",
- "rand_core",
- "serde",
- "strum",
- "strum_macros",
-]
-
-[[package]]
-name = "fixt"
-version = "0.0.2-alpha.1"
 source = "git+https://github.com/holochain/holochain?rev=a6ac04396#a6ac0439670ba367c723a80d3b8bc7c419aa5f6e"
 dependencies = [
  "holochain_serialized_bytes",
@@ -170,8 +155,8 @@ dependencies = [
  "chrono",
  "derive_more",
  "hc_time_index",
- "hdk 0.0.101-alpha.0",
- "holo_hash 0.0.2-alpha.1",
+ "hdk",
+ "holo_hash",
  "serde",
  "serde_json",
  "thiserror",
@@ -186,9 +171,10 @@ checksum = "d7afe4a420e3fe79967a00898cc1f4db7c8a49a9333a29f8a4bd76a253d5cd04"
 [[package]]
 name = "hc_time_index"
 version = "0.1.0"
+source = "git+https://github.com/juntofoundation/HC-Time-Chunking?branch=main#20d543b6532c25a6a35c3eafbf6944874427f1da"
 dependencies = [
  "chrono",
- "hdk 0.0.101-alpha.0 (git+https://github.com/holochain/holochain?rev=a6ac04396)",
+ "hdk",
  "lazy_static",
  "mut_static",
  "permutation",
@@ -199,29 +185,12 @@ dependencies = [
 [[package]]
 name = "hdk"
 version = "0.0.101-alpha.0"
-dependencies = [
- "hdk_derive 0.0.2-alpha.1",
- "holo_hash 0.0.2-alpha.1",
- "holochain_wasmer_guest",
- "holochain_zome_types 0.0.2-alpha.1",
- "paste",
- "serde",
- "serde_bytes",
- "thiserror",
- "tracing",
- "tracing-core",
- "tracing-subscriber",
-]
-
-[[package]]
-name = "hdk"
-version = "0.0.101-alpha.0"
 source = "git+https://github.com/holochain/holochain?rev=a6ac04396#a6ac0439670ba367c723a80d3b8bc7c419aa5f6e"
 dependencies = [
- "hdk_derive 0.0.2-alpha.1 (git+https://github.com/holochain/holochain?rev=a6ac04396)",
- "holo_hash 0.0.2-alpha.1 (git+https://github.com/holochain/holochain?rev=a6ac04396)",
+ "hdk_derive",
+ "holo_hash",
  "holochain_wasmer_guest",
- "holochain_zome_types 0.0.2-alpha.1 (git+https://github.com/holochain/holochain?rev=a6ac04396)",
+ "holochain_zome_types",
  "paste",
  "serde",
  "serde_bytes",
@@ -234,20 +203,9 @@ dependencies = [
 [[package]]
 name = "hdk_derive"
 version = "0.0.2-alpha.1"
-dependencies = [
- "holochain_zome_types 0.0.2-alpha.1",
- "paste",
- "proc-macro2",
- "quote",
- "syn",
-]
-
-[[package]]
-name = "hdk_derive"
-version = "0.0.2-alpha.1"
 source = "git+https://github.com/holochain/holochain?rev=a6ac04396#a6ac0439670ba367c723a80d3b8bc7c419aa5f6e"
 dependencies = [
- "holochain_zome_types 0.0.2-alpha.1 (git+https://github.com/holochain/holochain?rev=a6ac04396)",
+ "holochain_zome_types",
  "paste",
  "proc-macro2",
  "quote",
@@ -266,27 +224,12 @@ dependencies = [
 [[package]]
 name = "holo_hash"
 version = "0.0.2-alpha.1"
-dependencies = [
- "base64",
- "blake2b_simd",
- "derive_more",
- "fixt 0.0.2-alpha.1",
- "holochain_serialized_bytes",
- "rand",
- "serde",
- "serde_bytes",
- "thiserror",
-]
-
-[[package]]
-name = "holo_hash"
-version = "0.0.2-alpha.1"
 source = "git+https://github.com/holochain/holochain?rev=a6ac04396#a6ac0439670ba367c723a80d3b8bc7c419aa5f6e"
 dependencies = [
  "base64",
  "blake2b_simd",
  "derive_more",
- "fixt 0.0.2-alpha.1 (git+https://github.com/holochain/holochain?rev=a6ac04396)",
+ "fixt",
  "holochain_serialized_bytes",
  "rand",
  "serde",
@@ -346,29 +289,11 @@ dependencies = [
 [[package]]
 name = "holochain_zome_types"
 version = "0.0.2-alpha.1"
-dependencies = [
- "chrono",
- "fixt 0.0.2-alpha.1",
- "holo_hash 0.0.2-alpha.1",
- "holochain_serialized_bytes",
- "paste",
- "rand",
- "serde",
- "serde_bytes",
- "strum",
- "subtle",
- "thiserror",
- "tracing",
-]
-
-[[package]]
-name = "holochain_zome_types"
-version = "0.0.2-alpha.1"
 source = "git+https://github.com/holochain/holochain?rev=a6ac04396#a6ac0439670ba367c723a80d3b8bc7c419aa5f6e"
 dependencies = [
  "chrono",
- "fixt 0.0.2-alpha.1 (git+https://github.com/holochain/holochain?rev=a6ac04396)",
- "holo_hash 0.0.2-alpha.1 (git+https://github.com/holochain/holochain?rev=a6ac04396)",
+ "fixt",
+ "holo_hash",
  "holochain_serialized_bytes",
  "paste",
  "rand",
