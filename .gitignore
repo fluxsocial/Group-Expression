@@ -1,3 +1,10 @@
 target
 .cargo
 zomes/tests/node_modules
+node_modules
+*.dna
+*.js
+*.js.map
+!*.config.js
+!*.icons.js
+!dna.js

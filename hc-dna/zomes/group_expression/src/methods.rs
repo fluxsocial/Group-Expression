@@ -17,7 +17,7 @@ impl ExpressionDNA {
         create_entry(&expression)?;
 
         //Create time index for did author so that get_by_author can query with time pagination
-        hc_time_index::index_entry(expression.author.did.clone(), expression.clone(), LinkTag::new("expression"))?;
+        //hc_time_index::index_entry(expression.author.did.clone(), expression.clone(), LinkTag::new("expression"))?;
 
         let expression_element = get(expression_hash, GetOptions::default())?
             .ok_or(err("Could not get entry after commit"))?;
