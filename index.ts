@@ -1,11 +1,6 @@
-import type Address from "@perspect3vism/ad4m/Address";
-import type Agent from "@perspect3vism/ad4m/Agent";
-import type Language from "@perspect3vism/ad4m/Language";
-import type { HolochainLanguageDelegate } from "@perspect3vism/ad4m/LanguageContext";
-import type LanguageContext from "@perspect3vism/ad4m/LanguageContext";
-import type { Interaction } from "@perspect3vism/ad4m/Language";
-import ShortFormAdapter from "./adapter";
-import ShortFormAuthorAdapter from "./authorAdapter";
+import type { Address, Language, HolochainLanguageDelegate, LanguageContext, Interaction } from "@perspect3vism/ad4m";
+import Adapter from "./adapter";
+import AuthorAdapter from "./authorAdapter";
 import Icon from "./build/Icon.js";
 import ConstructorIcon from "./build/ConstructorIcon.js";
 import { JuntoSettingsUI } from "./SettingsUI";
@@ -20,7 +15,7 @@ function constructorIcon(): string {
   return ConstructorIcon;
 }
 
-function interactions(a: Agent, expression: Address): Interaction[] {
+function interactions(expression: Address): Interaction[] {
   return [];
 }
 
@@ -32,8 +27,8 @@ export default async function create(
   const Holochain = context.Holochain as HolochainLanguageDelegate;
   await Holochain.registerDNAs([{ file: DNA, nick: DNA_NICK }]);
 
-  const expressionAdapter = new ShortFormAdapter(context);
-  const authorAdaptor = new ShortFormAuthorAdapter(context);
+  const expressionAdapter = new Adapter(context);
+  const authorAdaptor = new AuthorAdapter(context);
   const settingsUI = new JuntoSettingsUI();
   const expressionUI = new GroupExpressionUI();
 

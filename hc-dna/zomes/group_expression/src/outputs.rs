@@ -2,7 +2,7 @@ use hdk::prelude::*;
 use holo_hash::DnaHash;
 use chrono::{DateTime, Utc};
 
-use crate::{Agent, GroupExpression};
+use crate::{GroupExpression};
 
 #[derive(SerializedBytes, Serialize, Deserialize, Debug)]
 pub struct ContextSchema {
@@ -47,10 +47,6 @@ pub struct GroupExpressionResponse {
 pub struct AgentResponse {
     #[serde(rename(serialize = "did:id"))]
     pub did: String,
-    #[serde(rename(serialize = "schema:givenName"))]
-    pub name: Option<String>,
-    #[serde(rename(serialize = "schema:email"))]
-    pub email: Option<String>,
 }
 
 
@@ -105,7 +101,9 @@ impl From<GroupExpression> for GroupExpressionResponse {
                 r#type: default_date_type(),
                 value: value.timestamp
             },
-            agent: AgentResponse::from(value.author),
+            agent: AgentResponse {
+                did: value.author
+            },
             proof: ExpressionProofResponse {
                 r#type: default_proof_type(),
                 created: value.timestamp,
@@ -113,16 +111,6 @@ impl From<GroupExpression> for GroupExpressionResponse {
                 proof_purpose: default_proof_purpose(),
                 jws: value.proof.signature
             }
-        }
-    }
-}
-
-impl From<Agent> for AgentResponse {
-    fn from(value: Agent) -> Self {
-        AgentResponse {
-            did: value.did,
-            email: value.email,
-            name: value.name
         }
     }
 }

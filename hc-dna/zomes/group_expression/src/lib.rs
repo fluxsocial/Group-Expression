@@ -16,7 +16,7 @@ use outputs::*;
 #[derive(Clone)]
 pub struct GroupExpression {
     data: GroupExpressionData,
-    author: Agent,
+    author: String,
     timestamp: DateTime<Utc>,
     proof: ExpressionProof,
 }
