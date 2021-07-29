@@ -48,11 +48,7 @@ export default class Adapter implements ExpressionAdapter {
     );
     if (expression != null) {
       const expressionSer = {
-        author: {
-          did: expression.expression_data["schema:agent"]["did:id"],
-          name: expression.expression_data["schema:agent"]["schema:givenName"],
-          email: expression.expression_data["schema:agent"]["schema:email"],
-        } as Agent,
+        author: expression.expression_data["schema:agent"]["did:id"],
         data: {
           name: expression.expression_data["foaf:name"],
           description: expression.expression_data["schema:description"],
