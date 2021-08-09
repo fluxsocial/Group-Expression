@@ -35,6 +35,10 @@ pub struct GroupExpressionResponse {
     name: String,
     #[serde(rename(serialize = "schema:description", deserialize = "schema:description"))]
     description: String,
+    #[serde(rename(serialize = "schema:image", deserialize = "schema:image"))]
+    image: String,
+    #[serde(rename(serialize = "schema:thumbnail", deserialize = "schema:thumbnail"))]
+    thumbnail: String,
     #[serde(rename(serialize = "schema:dateCreated", deserialize = "schema:dateCreated"))]
     created: DateCreated,
     #[serde(rename(serialize = "schema:agent", deserialize = "schema:agent"))]
@@ -97,6 +101,8 @@ impl From<GroupExpression> for GroupExpressionResponse {
             r#type: default_type(),
             name: value.data.name,
             description: value.data.description,
+            image: value.data.image,
+            thumbnail: value.data.thumbnail,
             created: DateCreated {
                 r#type: default_date_type(),
                 value: value.timestamp

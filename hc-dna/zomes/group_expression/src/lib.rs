@@ -25,6 +25,8 @@ pub struct GroupExpression {
 pub struct GroupExpressionData {
     name: String,
     description: String,
+    image: String,
+    thumbnail: String
 }
 
 pub struct ExpressionDNA();

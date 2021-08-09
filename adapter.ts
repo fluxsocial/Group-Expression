@@ -52,6 +52,8 @@ export default class Adapter implements ExpressionAdapter {
         data: {
           name: expression.expression_data["foaf:name"],
           description: expression.expression_data["schema:description"],
+          image: expression.expression_data["schema:image"],
+          thumbnail: expression.expression_data["schema:thumbnail"]
         },
         timestamp: expression.expression_data["schema:dateCreated"]["@value"],
         proof: {
