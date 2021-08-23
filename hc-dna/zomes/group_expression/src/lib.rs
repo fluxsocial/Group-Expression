@@ -21,6 +21,10 @@ pub struct GroupExpression {
     proof: ExpressionProof,
 }
 
+#[hdk_entry(id = "opaque_data", visibility = "public")]
+#[derive(Clone)]
+pub struct OpaqueData(serde_json::Value);
+
 #[derive(Serialize, Deserialize, Clone, SerializedBytes, Debug)]
 pub struct GroupExpressionData {
     name: String,
