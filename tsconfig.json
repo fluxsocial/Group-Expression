@@ -2,8 +2,10 @@
     "extends": "@tsconfig/svelte/tsconfig.json",
     "compilerOptions": {
       "types": ["node"],
+      "target": "ES6",
+      "moduleResolution": "node"
     },
     "include": ["*.ts"],
     "exclude": ["node_modules/*", "__sapper__/*", "public/*"],
-    "allowJs": true
+    "allowJs": true,
   }
