@@ -1,5 +1,4 @@
 use hdk::prelude::*;
-use holo_hash::DnaHash;
 use chrono::{DateTime, Utc};
 
 use crate::{GroupExpression};
@@ -130,7 +129,7 @@ pub struct ExpressionResponse {
 #[derive(SerializedBytes, Serialize, Deserialize, Debug)]
 pub struct HolochainData {
     pub element: Element,
-    pub expression_dna: DnaHash,
+    pub expression_dna: String,
     pub creator: AgentPubKey,
     pub created_at: chrono::DateTime<chrono::Utc>,
 }
@@ -143,4 +142,4 @@ pub struct ManyExpressionResponse(pub Vec<ExpressionResponse>);
 pub struct MaybeExpression(pub Option<ExpressionResponse>);
 
 #[derive(Serialize, Deserialize, SerializedBytes, Debug)]
-pub struct ManyDhtHash(pub Vec<DnaHash>);
+pub struct ManyDhtHash(pub Vec<String>);
